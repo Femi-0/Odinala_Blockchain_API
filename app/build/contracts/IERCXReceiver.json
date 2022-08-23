@@ -1,0 +1,556 @@
+{
+  "contractName": "IERCXReceiver",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "operator",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "itemId",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "layer",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "data",
+          "type": "bytes"
+        }
+      ],
+      "name": "onERCXReceived",
+      "outputs": [
+        {
+          "internalType": "bytes4",
+          "name": "",
+          "type": "bytes4"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"address\",\"name\":\"operator\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"itemId\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"layer\",\"type\":\"uint256\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"name\":\"onERCXReceived\",\"outputs\":[{\"internalType\":\"bytes4\",\"name\":\"\",\"type\":\"bytes4\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"Interface for any contract that wants to support safeTransfers from ERCX asset contracts.\",\"methods\":{\"onERCXReceived(address,address,uint256,uint256,bytes)\":{\"details\":\"The ERCX smart contract calls this function on the recipient after a {IERCX-safeTransferFrom}. This function MUST return the function selector, otherwise the caller will revert the transaction. The selector to be returned can be obtained as `this.onERCXReceived.selector`. This function MAY throw to revert and reject the transfer. Note: the ERCX contract address is always the message sender.\",\"params\":{\"data\":\"Additional data with no specified format\",\"from\":\"The address which previously owned the token\",\"itemId\":\"The NFT identifier which is being transferred\",\"operator\":\"The address which called `safeTransferFrom` function\"},\"return\":\"bytes4 `bytes4(keccak256(\\\"onERCXReceived(address,address,uint256,uint256,bytes)\\\"))`\"}},\"title\":\"ERCX token receiver interface\"},\"userdoc\":{\"methods\":{\"onERCXReceived(address,address,uint256,uint256,bytes)\":{\"notice\":\"Handle the receipt of an NFT\"}}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/ERCX/Interface/IERCXReceiver.sol\":\"IERCXReceiver\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/ERCX/Interface/IERCXReceiver.sol\":{\"keccak256\":\"0xddd091afced25640027668a5557d49a259297cc3a882f47be62cda3e7d65be33\",\"urls\":[\"bzz-raw://82168c9713fdab9802bf20d749d60fc78ac652802a75a9176e2e463dba1b6067\",\"dweb:/ipfs/QmTNyj3EupLvvk2jbLfZSQJ24QAYKtHxEQMe7vG7ddXomL\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity ^0.5.0;\n\n/**\n * @title ERCX token receiver interface\n * @dev Interface for any contract that wants to support safeTransfers\n * from ERCX asset contracts.\n */\ncontract IERCXReceiver {\n    /**\n    * @notice Handle the receipt of an NFT\n    * @dev The ERCX smart contract calls this function on the recipient\n    * after a {IERCX-safeTransferFrom}. This function MUST return the function selector,\n    * otherwise the caller will revert the transaction. The selector to be\n    * returned can be obtained as `this.onERCXReceived.selector`. This\n    * function MAY throw to revert and reject the transfer.\n    * Note: the ERCX contract address is always the message sender.\n    * @param operator The address which called `safeTransferFrom` function\n    * @param from The address which previously owned the token\n    * @param itemId The NFT identifier which is being transferred\n    * @param data Additional data with no specified format\n    * @return bytes4 `bytes4(keccak256(\"onERCXReceived(address,address,uint256,uint256,bytes)\"))`\n    */\n    function onERCXReceived(\n        address operator,\n        address from,\n        uint256 itemId,\n        uint256 layer,\n        bytes memory data\n    ) public returns (bytes4);\n}\n",
+  "sourcePath": "/home/bitnami/BLK_Micro/dApp-nodeJS-webpack/app/contracts/ERCX/Interface/IERCXReceiver.sol",
+  "ast": {
+    "absolutePath": "project:/contracts/ERCX/Interface/IERCXReceiver.sol",
+    "exportedSymbols": {
+      "IERCXReceiver": [
+        2898
+      ]
+    },
+    "id": 2899,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 2882,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": "@title ERCX token receiver interface\n@dev Interface for any contract that wants to support safeTransfers\nfrom ERCX asset contracts.",
+        "fullyImplemented": false,
+        "id": 2898,
+        "linearizedBaseContracts": [
+          2898
+        ],
+        "name": "IERCXReceiver",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": "@notice Handle the receipt of an NFT\n@dev The ERCX smart contract calls this function on the recipient\nafter a {IERCX-safeTransferFrom}. This function MUST return the function selector,\notherwise the caller will revert the transaction. The selector to be\nreturned can be obtained as `this.onERCXReceived.selector`. This\nfunction MAY throw to revert and reject the transfer.\nNote: the ERCX contract address is always the message sender.\n@param operator The address which called `safeTransferFrom` function\n@param from The address which previously owned the token\n@param itemId The NFT identifier which is being transferred\n@param data Additional data with no specified format\n@return bytes4 `bytes4(keccak256(\"onERCXReceived(address,address,uint256,uint256,bytes)\"))`",
+            "id": 2897,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "onERCXReceived",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 2893,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2884,
+                  "name": "operator",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1090:16:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2883,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1090:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2886,
+                  "name": "from",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1116:12:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 2885,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1116:7:10",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2888,
+                  "name": "itemId",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1138:14:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2887,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1138:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2890,
+                  "name": "layer",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1162:13:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2889,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1162:7:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 2892,
+                  "name": "data",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1185:17:10",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_memory_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 2891,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1185:5:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1080:128:10"
+            },
+            "returnParameters": {
+              "id": 2896,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 2895,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 2897,
+                  "src": "1225:6:10",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes4",
+                    "typeString": "bytes4"
+                  },
+                  "typeName": {
+                    "id": 2894,
+                    "name": "bytes4",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1225:6:10",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes4",
+                      "typeString": "bytes4"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1224:8:10"
+            },
+            "scope": 2898,
+            "src": "1057:176:10",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 2899,
+        "src": "174:1061:10"
+      }
+    ],
+    "src": "0:1236:10"
+  },
+  "legacyAST": {
+    "attributes": {
+      "absolutePath": "project:/contracts/ERCX/Interface/IERCXReceiver.sol",
+      "exportedSymbols": {
+        "IERCXReceiver": [
+          2898
+        ]
+      }
+    },
+    "children": [
+      {
+        "attributes": {
+          "literals": [
+            "solidity",
+            "^",
+            "0.5",
+            ".0"
+          ]
+        },
+        "id": 2882,
+        "name": "PragmaDirective",
+        "src": "0:23:10"
+      },
+      {
+        "attributes": {
+          "baseContracts": [
+            null
+          ],
+          "contractDependencies": [
+            null
+          ],
+          "contractKind": "contract",
+          "documentation": "@title ERCX token receiver interface\n@dev Interface for any contract that wants to support safeTransfers\nfrom ERCX asset contracts.",
+          "fullyImplemented": false,
+          "linearizedBaseContracts": [
+            2898
+          ],
+          "name": "IERCXReceiver",
+          "scope": 2899
+        },
+        "children": [
+          {
+            "attributes": {
+              "body": null,
+              "documentation": "@notice Handle the receipt of an NFT\n@dev The ERCX smart contract calls this function on the recipient\nafter a {IERCX-safeTransferFrom}. This function MUST return the function selector,\notherwise the caller will revert the transaction. The selector to be\nreturned can be obtained as `this.onERCXReceived.selector`. This\nfunction MAY throw to revert and reject the transfer.\nNote: the ERCX contract address is always the message sender.\n@param operator The address which called `safeTransferFrom` function\n@param from The address which previously owned the token\n@param itemId The NFT identifier which is being transferred\n@param data Additional data with no specified format\n@return bytes4 `bytes4(keccak256(\"onERCXReceived(address,address,uint256,uint256,bytes)\"))`",
+              "implemented": false,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
+              "name": "onERCXReceived",
+              "scope": 2898,
+              "stateMutability": "nonpayable",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "operator",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2883,
+                        "name": "ElementaryTypeName",
+                        "src": "1090:7:10"
+                      }
+                    ],
+                    "id": 2884,
+                    "name": "VariableDeclaration",
+                    "src": "1090:16:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "from",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "address",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "address",
+                          "stateMutability": "nonpayable",
+                          "type": "address"
+                        },
+                        "id": 2885,
+                        "name": "ElementaryTypeName",
+                        "src": "1116:7:10"
+                      }
+                    ],
+                    "id": 2886,
+                    "name": "VariableDeclaration",
+                    "src": "1116:12:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "itemId",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2887,
+                        "name": "ElementaryTypeName",
+                        "src": "1138:7:10"
+                      }
+                    ],
+                    "id": 2888,
+                    "name": "VariableDeclaration",
+                    "src": "1138:14:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "layer",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "uint256",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "uint256",
+                          "type": "uint256"
+                        },
+                        "id": 2889,
+                        "name": "ElementaryTypeName",
+                        "src": "1162:7:10"
+                      }
+                    ],
+                    "id": 2890,
+                    "name": "VariableDeclaration",
+                    "src": "1162:13:10"
+                  },
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "data",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "bytes",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes",
+                          "type": "bytes"
+                        },
+                        "id": 2891,
+                        "name": "ElementaryTypeName",
+                        "src": "1185:5:10"
+                      }
+                    ],
+                    "id": 2892,
+                    "name": "VariableDeclaration",
+                    "src": "1185:17:10"
+                  }
+                ],
+                "id": 2893,
+                "name": "ParameterList",
+                "src": "1080:128:10"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 2897,
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "type": "bytes4",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "name": "bytes4",
+                          "type": "bytes4"
+                        },
+                        "id": 2894,
+                        "name": "ElementaryTypeName",
+                        "src": "1225:6:10"
+                      }
+                    ],
+                    "id": 2895,
+                    "name": "VariableDeclaration",
+                    "src": "1225:6:10"
+                  }
+                ],
+                "id": 2896,
+                "name": "ParameterList",
+                "src": "1224:8:10"
+              }
+            ],
+            "id": 2897,
+            "name": "FunctionDefinition",
+            "src": "1057:176:10"
+          }
+        ],
+        "id": 2898,
+        "name": "ContractDefinition",
+        "src": "174:1061:10"
+      }
+    ],
+    "id": 2899,
+    "name": "SourceUnit",
+    "src": "0:1236:10"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.4.4",
+  "updatedAt": "2022-01-15T03:42:33.663Z",
+  "devdoc": {
+    "details": "Interface for any contract that wants to support safeTransfers from ERCX asset contracts.",
+    "methods": {
+      "onERCXReceived(address,address,uint256,uint256,bytes)": {
+        "details": "The ERCX smart contract calls this function on the recipient after a {IERCX-safeTransferFrom}. This function MUST return the function selector, otherwise the caller will revert the transaction. The selector to be returned can be obtained as `this.onERCXReceived.selector`. This function MAY throw to revert and reject the transfer. Note: the ERCX contract address is always the message sender.",
+        "params": {
+          "data": "Additional data with no specified format",
+          "from": "The address which previously owned the token",
+          "itemId": "The NFT identifier which is being transferred",
+          "operator": "The address which called `safeTransferFrom` function"
+        },
+        "return": "bytes4 `bytes4(keccak256(\"onERCXReceived(address,address,uint256,uint256,bytes)\"))`"
+      }
+    },
+    "title": "ERCX token receiver interface"
+  },
+  "userdoc": {
+    "methods": {
+      "onERCXReceived(address,address,uint256,uint256,bytes)": {
+        "notice": "Handle the receipt of an NFT"
+      }
+    }
+  }
+}
