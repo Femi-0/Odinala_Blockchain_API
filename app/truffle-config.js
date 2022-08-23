@@ -61,7 +61,7 @@ module.exports = {
     ropsten: {
       provider: () =>
         new HDWalletProvider(
-          `electric gift gold bitter boring surface stumble swift peanut adult horse dish`,
+          `mnemonic`,
           `https://ropsten.infura.io/v3/1c87e2e41793468aa68807e48723d7d5`
         ),
       network_id: 3, // Ropsten's id
@@ -79,7 +79,7 @@ module.exports = {
     Canary: {
       provider: () =>
         new HDWalletProvider(
-          `electric gift gold bitter boring surface stumble swift peanut adult horse dish`,
+          `mnemonic`,
           `https://songbird.towolabs.com/rpc`
         ),
       network_id: 19, // This network is yours, in the cloud.
@@ -90,7 +90,7 @@ module.exports = {
     Coston: {
       provider: () =>
         new HDWalletProvider(
-          `electric gift gold bitter boring surface stumble swift peanut adult horse dish`,
+          `mnemonic`,
           `https://coston-api.flare.network/ext/bc/C/rpc`
         ),
       network_id: 16, // This network is yours, in the cloud.
