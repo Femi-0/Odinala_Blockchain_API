@@ -8,3 +8,7 @@ build/contracts
 app/.openzeppelin
 
 app/truffle-config.js
+
+.DS_Store
+
+.gitignore
