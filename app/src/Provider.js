@@ -6,7 +6,7 @@ class Provider {
     //setup web3 provider
     this.web3 = new Web3(
       new HDWallet(
-        "0x53fc1da06fb832df4f28ddfa72c7856c70c990b42eff5b93cbc2e1994541b156",
+        PRIVATE_KEY,
         "https://coston-api.flare.network/ext/bc/C/rpc"
       )
     );

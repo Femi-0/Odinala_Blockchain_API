@@ -1,12 +1,10 @@
 
-dApp-nodeJS-webpack/node_modules
+node_modules
 
-dApp-nodeJS-webpack/app/node_modules
+app/node_modules
 
-dApp-nodeJS-webpack/app/coverage
+build/contracts
 
-dApp-nodeJS-webpack/dist/*.js
+app/.openzeppelin
 
-dApp-nodeJS-webpack/package-lock.json
-
-dApp-nodeJS-webpack/app/package-lock.json
+app/truffle-config.js

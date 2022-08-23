@@ -8,8 +8,8 @@ const WooCommerceRestApi = require("@woocommerce/woocommerce-rest-api").default;
 
 const api = new WooCommerceRestApi({
   url: "https://network.steigenberg.in",
-  consumerKey: "ck_9e0dd6acc8db39ecc3e648a5c1c40bf41ba89cd1",
-  consumerSecret: "cs_115c224a0053cade06de181cccee81bb66827047",
+  consumerKey: "CONSUMER_KEY",
+  consumerSecret: "CONSUMER_SECRET",
   version: "wc/v3",
 });
 
@@ -25,17 +25,6 @@ app.get("/orders", async (req, res) => {
   }
 });
 
-// app.get("/balance", async (req, res) => {
-//   try {
-//     const { tkn, owner } = req.body;
-//     const bals = await tokenfactory.balance(tkn, owner);
-//     res.send(bals.events.balz.returnValues[0]);
-//     console.log(bals);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// });
-
 app.get("/balance", (req, res) => {
   const { tkn, owner } = req.body;
   tokenfactory
@@ -48,15 +37,6 @@ app.get("/name", (req, res) => {
   return res.send("App name");
 });
 
-//app.get("/list", async (req, res) => {
-// try {
-//   const lists = await tokenfactory.listToken();
-//   res.send(lists.events.listT.returnValues[0]);
-//   console.log(lists);
-// } catch (error) {
-// console.error(error);
-// }
-//});
 
 app.get("/list", (req, res) => {
   tokenfactory
@@ -90,15 +70,5 @@ app.post("/fulfill", (req, res) => {
     .then((trans) => res.send(trans))
     .catch((err) => res.send(err));
 });
-
-// app.post("/fulfill", async (req, res) => {
-//   try {
-//     const { tkn, to, amount } = req.body;
-//     const confirm = await tokenfactory.send(tkn, to, amount);
-//     res.send(confirm);
-//   } catch (error) {
-//     console.log(error);
-//   }
-// });
 
 app.listen(8080, () => console.log("listening on port 8080"));
